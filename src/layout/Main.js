@@ -8,7 +8,7 @@ const Main = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch(`http://www.omdbapi.com/?s=panda&apikey=64b27b46`)
+    fetch(`https://www.omdbapi.com/?s=panda&apikey=64b27b46`)
       .then((response) => response.json())
       .then((date) => (
         setMovies(date.Search), 
@@ -19,7 +19,7 @@ const Main = () => {
   const searchMovie = (str, type = "all") => {
     setLoading(true);
     fetch(
-      `http://www.omdbapi.com/?s=${str}${
+      `https://www.omdbapi.com/?s=${str}${
         type !== "all" ? `&type=${type}` : ""
       }&apikey=64b27b46`
     )
